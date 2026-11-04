@@ -73,7 +73,7 @@ function Hero() {
           <img
             src={asset('logo-transparente.png')}
             alt=""
-            className="animate-float absolute bottom-0 left-1/2 z-20 w-32 -translate-x-1/2 drop-shadow-lg sm:w-40"
+            className="animate-float absolute bottom-0 left-1/2 z-20 w-32 -translate-x-1/2 sm:w-40 lg:drop-shadow-lg"
           />
         </div>
       </div>

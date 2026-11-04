@@ -111,7 +111,7 @@ export function CartDrawer() {
           </div>
         ) : (
           <>
-            <ul className="flex-1 space-y-3 overflow-y-auto px-5 py-4">
+            <ul className="flex-1 space-y-3 overflow-y-auto overscroll-contain px-5 py-4">
               {lines.map(({ product, quantity }) => (
                 <li key={product.id} className="flex gap-3 rounded-3xl bg-white p-3 shadow-card">
                   <Link to={`/producto/${product.id}`} onClick={close} className="shrink-0">

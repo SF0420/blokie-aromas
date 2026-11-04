@@ -82,12 +82,12 @@ export function Catalog() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Buscar aroma…"
-                className="input !rounded-full pl-10"
+                className="input appearance-none !rounded-full pl-10"
               />
             </label>
             <label>
               <span className="sr-only">Ordenar</span>
-              <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="input !w-auto !rounded-full pr-8 text-sm font-semibold">
+              <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="input !w-auto !rounded-full pr-8 font-semibold sm:text-sm">
                 <option value="destacados">Destacados</option>
                 <option value="precio-asc">Menor precio</option>
                 <option value="precio-desc">Mayor precio</option>

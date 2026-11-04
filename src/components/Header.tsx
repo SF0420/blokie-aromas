@@ -106,7 +106,7 @@ export function Header() {
         <nav
           id="mobile-menu"
           aria-label="Menú móvil"
-          className="animate-slide-up fixed inset-x-0 top-16 bottom-0 z-30 overflow-y-auto bg-cream px-4 pt-4 pb-10 md:hidden"
+          className="animate-slide-up fixed inset-x-0 top-16 bottom-0 z-30 overflow-y-auto overscroll-contain bg-cream px-4 pt-4 pb-10 md:hidden"
         >
           <ul className="flex flex-col gap-2">
             {nav.map((item) => (
