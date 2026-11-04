@@ -1,6 +1,7 @@
 import { Award, Globe2, HeartHandshake, Lightbulb, Leaf, Smile, Sparkles, Star, Target, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Bubbles } from '../components/icons'
+import { TeamSection } from '../components/TeamSection'
 import { site } from '../config/site'
 import { asset } from '../lib/format'
 
@@ -108,6 +109,8 @@ export function About() {
         </div>
         <KeyGrid items={visionKeys} tint="bg-sage-100 text-sage-700" />
       </section>
+
+      <TeamSection />
 
       <section className="container-page mt-20 text-center">
         <Link to="/catalogo" className="btn-primary text-base">

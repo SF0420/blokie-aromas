@@ -91,7 +91,6 @@ function Footer() {
             <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-ink-soft hover:text-rose-600">
               <InstagramIcon className="size-4" /> Instagram
             </a>
-            <a href={`mailto:${site.email}`} className="text-ink-soft hover:text-rose-600">{site.email}</a>
           </div>
         </div>
       </div>

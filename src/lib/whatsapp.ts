@@ -27,13 +27,13 @@ export function productUrl(product: Product) {
 
 /** Link para compartir un producto con cualquier contacto de WhatsApp. */
 export function shareProductLink(product: Product) {
-  const text = `Mira esta ${product.category === 'jabones' ? 'belleza' : 'maravilla'} de ${site.name} 🐥✨\n${product.name} — ${formatCOP(product.price)}\n${productUrl(product)}`
+  const text = `¡Mira esto! 😍 ${product.name} de ${site.name} por ${formatCOP(product.price)}\n${productUrl(product)}`
   return `https://wa.me/?text=${encodeURIComponent(text)}`
 }
 
 /** Link para preguntar por un producto puntual. */
 export function askProductLink(product: Product) {
-  return chatLink(`¡Hola ${site.name}! 🐥 Me interesa: ${product.name} (${formatCOP(product.price)}). ¿Está disponible?`)
+  return chatLink(`¡Hola! 👋 Me gustó ${product.name} (${formatCOP(product.price)}), ¿lo tienen disponible?`)
 }
 
 export function buildOrderMessage(lines: CartLine[], customer: CustomerInfo, payment: PaymentMethod, subtotal: number) {
@@ -45,13 +45,14 @@ export function buildOrderMessage(lines: CartLine[], customer: CustomerInfo, pay
     site.freeShippingFrom > 0 && subtotal >= site.freeShippingFrom ? 'Envío: ¡GRATIS! 🎉' : `Envío: por confirmar según ciudad`
 
   const parts = [
-    `¡Hola ${site.name}! 🐥 Quiero hacer este pedido:`,
+    `¡Hola! 👋 Quiero realizar mi pedido 🛍️`,
     '',
     items,
     '',
     `Subtotal: ${formatCOP(subtotal)}`,
     shipping,
     '',
+    'Mis datos 👇',
     `👤 Nombre: ${customer.name}`,
     `📱 Teléfono: ${customer.phone}`,
     `📍 Ciudad: ${customer.city}`,
@@ -59,6 +60,7 @@ export function buildOrderMessage(lines: CartLine[], customer: CustomerInfo, pay
     `💳 Método de pago: ${payment.name}`,
   ]
   if (customer.notes.trim()) parts.push(`📝 Notas: ${customer.notes.trim()}`)
+  parts.push('', '¡Gracias! 💛')
   return parts.join('\n')
 }
 

@@ -5,6 +5,7 @@ import { ProductCard } from '../components/ProductCard'
 import { PaymentMethodsGrid, SectionHeading } from '../components/sections'
 import { availablePaymentMethods, site } from '../config/site'
 import { categories, products } from '../data/products'
+import { team } from '../data/team'
 import { asset } from '../lib/format'
 import { chatLink } from '../lib/whatsapp'
 
@@ -197,9 +198,21 @@ export function Home() {
                 <p className="mt-1 text-sm text-ink-soft">Ser una marca reconocida a nivel nacional e internacional por innovación y sostenibilidad.</p>
               </div>
             </div>
-            <Link to="/nosotros" className="btn-primary mt-6">
-              Conoce nuestra historia <ArrowRight className="size-4" />
-            </Link>
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Link to="/nosotros" className="btn-primary">
+                Conoce al equipo <ArrowRight className="size-4" />
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2" aria-hidden="true">
+                  {team.map((m) => (
+                    <span key={m.name} className={`grid size-10 place-items-center rounded-full border-2 border-sage-100 text-xs font-extrabold ${m.tint}`}>
+                      {m.initials}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-ink-soft">Hecho por {team.length} emprendedores</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -227,7 +240,7 @@ export function Home() {
             necesitas!
           </p>
           <a
-            href={chatLink(`¡Hola ${site.name}! 🐥 Quiero armar un regalo personalizado.`)}
+            href={chatLink('¡Hola! 👋 Quiero armar un regalo 🎁')}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp relative mt-6 text-base"
