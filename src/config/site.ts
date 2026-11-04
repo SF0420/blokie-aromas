@@ -8,8 +8,8 @@ export const site = {
   whatsappNumber: '573013038919',
   whatsappGreeting: '¡Hola Blokie Aromas! 🐥 Quiero más información sobre sus velas y jabones.',
   city: 'Colombia',
-  email: 'hola@blokiearomas.com',
-  instagram: 'https://instagram.com/blokiearomas',
+  email: 'simonflorezr07@gmail.com',
+  instagram: 'https://www.instagram.com/bbokie.aromas/',
   /** Desde este valor (COP) el envío es gratis. Pon 0 para desactivar. */
   freeShippingFrom: 120000,
   shippingNote: 'El costo de envío se confirma por WhatsApp según tu ciudad.',
