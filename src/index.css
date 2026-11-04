@@ -62,6 +62,8 @@
     *::before,
     *::after {
       animation-duration: 0.01ms !important;
+      /* Sin esto, una animación infinita de 0.01ms oscila sin parar (el logo "temblaba") */
+      animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
   }
