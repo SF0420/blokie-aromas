@@ -70,11 +70,12 @@ function Hero() {
           <figure className="absolute top-0 left-1/2 z-10 w-[48%] -translate-x-1/2 rounded-[1.75rem] bg-white p-2 shadow-soft">
             <img src={asset('images/vela-soya.jpg')} alt="Vela de soya en vaso" className="aspect-[3/4] w-full rounded-[1.4rem] object-cover" />
           </figure>
-          <img
-            src={asset('logo-transparente.png')}
-            alt=""
-            className="animate-float absolute bottom-0 left-1/2 z-20 w-32 -translate-x-1/2 sm:w-40 lg:drop-shadow-lg"
-          />
+          {/* El contenedor centra (no se anima); la imagen solo se mueve con transform 3D.
+              La sombra es un elemento quieto aparte: un filtro animado hacía temblar el logo en celular. */}
+          <div className="pointer-events-none absolute bottom-0 left-1/2 z-20 w-32 -translate-x-1/2 sm:w-40" aria-hidden="true">
+            <span className="absolute -bottom-1 left-1/2 h-4 w-3/5 -translate-x-1/2 rounded-full bg-ink/15 blur-md" />
+            <img src={asset('logo-transparente.png')} alt="" className="animate-bob relative block w-full" width={400} height={370} />
+          </div>
         </div>
       </div>
     </section>

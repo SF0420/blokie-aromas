@@ -140,7 +140,28 @@
   }
 }
 
-/* Solo en pantallas grandes con mouse: en celular (sobre todo iOS) se veía como un salto/parpadeo */
+/* Flotado suave del logo de la portada, también en celular.
+   Solo anima transform (translate3d → GPU), sin filtros ni otras transformaciones en el mismo elemento. */
+@keyframes bob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-bob {
+    animation: bob 5s ease-in-out infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Burbujas decorativas: solo en pantallas grandes con mouse */
 @media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
   .animate-float {
     animation: float 6s ease-in-out infinite;
