@@ -25,6 +25,8 @@ export interface PaymentMethod {
   details: string
   instructions: string
   color: string
+  /** true = se muestra como "Próximamente" y no se puede elegir. */
+  comingSoon?: boolean
 }
 
 export const paymentMethods: PaymentMethod[] = [
@@ -43,6 +45,7 @@ export const paymentMethods: PaymentMethod[] = [
     details: 'Daviplata: 300 000 0000',
     instructions: 'Transfiere el total a nuestro Daviplata y envía el comprobante por WhatsApp.',
     color: '#ed1c27',
+    comingSoon: true,
   },
   {
     id: 'bancolombia',
@@ -51,6 +54,7 @@ export const paymentMethods: PaymentMethod[] = [
     details: 'Bancolombia Ahorros: 000-000000-00 · A nombre de Blokie Aromas',
     instructions: 'Haz la transferencia y comparte el comprobante por WhatsApp para despachar tu pedido.',
     color: '#fdda24',
+    comingSoon: true,
   },
   {
     id: 'contraentrega',
@@ -61,3 +65,5 @@ export const paymentMethods: PaymentMethod[] = [
     color: '#4f7d65',
   },
 ]
+
+export const availablePaymentMethods = paymentMethods.filter((m) => !m.comingSoon)

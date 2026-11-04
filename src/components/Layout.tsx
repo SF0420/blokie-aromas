@@ -75,7 +75,10 @@ function Footer() {
           <h3 className="font-extrabold">Métodos de pago</h3>
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
             {paymentMethods.map((m) => (
-              <li key={m.id}>{m.name}</li>
+              <li key={m.id}>
+                {m.name}
+                {m.comingSoon && <span className="ml-1.5 text-xs opacity-70">(próximamente)</span>}
+              </li>
             ))}
           </ul>
         </div>

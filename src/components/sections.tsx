@@ -28,13 +28,16 @@ export function PaymentMethodsGrid() {
       {paymentMethods.map((m) => {
         const Icon = paymentIcons[m.id]
         return (
-          <li key={m.id} className="flex items-start gap-4 rounded-3xl bg-white p-5 shadow-card">
+          <li key={m.id} className={`relative flex items-start gap-4 rounded-3xl bg-white p-5 shadow-card ${m.comingSoon ? 'opacity-60 grayscale-[40%]' : ''}`}>
             <span className="grid size-12 shrink-0 place-items-center rounded-2xl text-white" style={{ backgroundColor: m.color }}>
               <Icon className={`size-6 ${m.id === 'bancolombia' ? 'text-ink' : ''}`} />
             </span>
             <div>
               <h3 className="font-extrabold">{m.name}</h3>
               <p className="text-sm text-ink-soft">{m.short}</p>
+              {m.comingSoon && (
+                <span className="mt-2 inline-block rounded-full bg-butter-100 px-2.5 py-0.5 text-[11px] font-extrabold text-ink">Próximamente</span>
+              )}
             </div>
           </li>
         )

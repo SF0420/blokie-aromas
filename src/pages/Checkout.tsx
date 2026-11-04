@@ -174,22 +174,27 @@ export function Checkout() {
               {paymentMethods.map((m) => {
                 const Icon = paymentIcons[m.id]
                 const checked = m.id === paymentId
+                const disabled = !!m.comingSoon
                 return (
                   <label
                     key={m.id}
-                    className={`flex cursor-pointer items-start gap-3 rounded-2xl border-2 p-4 transition ${
-                      checked ? 'border-rose-600 bg-rose-100/50' : 'border-ink/10 hover:border-rose'
+                    className={`flex items-start gap-3 rounded-2xl border-2 p-4 transition ${
+                      disabled
+                        ? 'cursor-not-allowed border-dashed border-ink/10 opacity-55'
+                        : checked
+                          ? 'cursor-pointer border-rose-600 bg-rose-100/50'
+                          : 'cursor-pointer border-ink/10 hover:border-rose'
                     }`}
                   >
-                    <input type="radio" name="payment" value={m.id} checked={checked} onChange={() => setPaymentId(m.id)} className="sr-only" />
+                    <input type="radio" name="payment" value={m.id} checked={checked} disabled={disabled} onChange={() => setPaymentId(m.id)} className="sr-only" />
                     <span className="grid size-10 shrink-0 place-items-center rounded-xl text-white" style={{ backgroundColor: m.color }}>
                       <Icon className={`size-5 ${m.id === 'bancolombia' ? 'text-ink' : ''}`} />
                     </span>
                     <span className="flex-1">
                       <span className="block font-extrabold">{m.name}</span>
-                      <span className="block text-xs text-ink-soft">{m.short}</span>
+                      <span className="block text-xs text-ink-soft">{disabled ? 'Próximamente' : m.short}</span>
                     </span>
-                    <span className={`mt-1 grid size-5 shrink-0 place-items-center rounded-full border-2 ${checked ? 'border-rose-600' : 'border-ink/20'}`}>
+                    <span className={`mt-1 grid size-5 shrink-0 place-items-center rounded-full border-2 ${disabled ? 'hidden' : checked ? 'border-rose-600' : 'border-ink/20'}`}>
                       {checked && <span className="size-2.5 rounded-full bg-rose-600" />}
                     </span>
                   </label>

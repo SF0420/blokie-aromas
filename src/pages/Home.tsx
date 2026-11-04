@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Bubbles, Leaf, WhatsAppIcon } from '../components/icons'
 import { ProductCard } from '../components/ProductCard'
 import { PaymentMethodsGrid, SectionHeading } from '../components/sections'
-import { site } from '../config/site'
+import { availablePaymentMethods, site } from '../config/site'
 import { categories, products } from '../data/products'
 import { asset } from '../lib/format'
 import { chatLink } from '../lib/whatsapp'
@@ -84,7 +84,7 @@ function HowToBuy() {
   const steps = [
     { icon: ShoppingBag, title: 'Elige tus favoritos', text: 'Agrega velas, jabones o kits a tu carrito. Se guarda aunque cierres la página.' },
     { icon: MessageCircle, title: 'Envía tu pedido', text: 'Completa tus datos y te llevamos a WhatsApp con el pedido listo para enviar.' },
-    { icon: PackageCheck, title: 'Paga y recibe', text: 'Paga con Nequi, Daviplata, transferencia o contraentrega y recibe en casa.' },
+    { icon: PackageCheck, title: 'Paga y recibe', text: `Paga con ${new Intl.ListFormat('es', { type: 'disjunction' }).format(availablePaymentMethods.map((m) => m.name.toLowerCase().startsWith('efectivo') ? 'efectivo contraentrega' : m.name))} y recibe en casa.` },
   ]
   return (
     <section className="container-page mt-20">
