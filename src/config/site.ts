@@ -5,7 +5,7 @@ export const site = {
   tagline: 'Aromas que te inspiran',
   subtitle: 'Velas y jabones artesanales',
   /** Número de WhatsApp en formato internacional, solo dígitos (57 = Colombia). */
-  whatsappNumber: '573000000000',
+  whatsappNumber: '573013038919',
   whatsappGreeting: '¡Hola Blokie Aromas! 🐥 Quiero más información sobre sus velas y jabones.',
   city: 'Colombia',
   email: 'hola@blokiearomas.com',
