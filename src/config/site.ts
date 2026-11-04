@@ -32,7 +32,7 @@ export const paymentMethods: PaymentMethod[] = [
     id: 'nequi',
     name: 'Nequi',
     short: 'Pago inmediato desde tu celular',
-    details: 'Nequi: 300 000 0000',
+    details: 'Nequi: 301 303 8919',
     instructions: 'Transfiere el total a nuestro Nequi y envía el comprobante por WhatsApp.',
     color: '#da0081',
   },
