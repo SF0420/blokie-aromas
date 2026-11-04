@@ -1,0 +1,22 @@
+{
+  "product": "Blokie Aromas — tienda de velas y jabones artesanales (Colombia, COP)",
+  "stack": ["vite", "react", "typescript", "tailwindcss@4", "react-router (HashRouter)", "lucide-react"],
+  "tokensFile": "src/index.css",
+  "decisions": [
+    {
+      "date": "2026-11-03",
+      "decision": "Estética pastel tierna derivada del logo: crema, durazno, amarillo mantequilla, verde salvia, celeste burbuja, rosa. Nunito + Dancing Script para la marca.",
+      "source": "logo de la marca"
+    },
+    {
+      "date": "2026-11-03",
+      "decision": "Hero con abanico de fotos rotadas, inspirado en 'Hero Section with Cards' (21st.dev @scrollxui). Tarjeta de producto con imagen grande y badge, inspirada en 'Product Card' (@deltacomponents). Carrito como drawer lateral (pantalla completa en móvil).",
+      "source": "21st search (sin recuperar código; implementación propia)"
+    },
+    {
+      "date": "2026-11-03",
+      "decision": "Pedidos por WhatsApp (wa.me) sin pasarela; grid de productos 2 columnas en móvil.",
+      "source": "usuario"
+    }
+  ]
+}
